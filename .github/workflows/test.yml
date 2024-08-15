@@ -65,4 +65,5 @@ jobs:
           --ignore="jax3d/projects/nesf/nerfstatic/nerf/utils_test.py" \
           --ignore="jax3d/projects/nesf/nerfstatic/utils/train_utils_test.py"
     - name: Report results
+      if: always()
       uses: AryazE/auto-dylin/report@main
