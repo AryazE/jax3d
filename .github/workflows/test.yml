@@ -51,6 +51,8 @@ jobs:
     - run: pip install -e .[dev]  # Install dev requirements
     - run: pip install -e .[nesf] # Install nesf requirements
 
+    - name: Instrument code
+      uses: AryazE/auto-dylin/instrument@main
     - name: Run core tests
       # Args:
       # -vv: Verbose logs
@@ -62,3 +64,5 @@ jobs:
           --ignore="jax3d/projects/nesf/nerfstatic/integration_test/import_test.py" \
           --ignore="jax3d/projects/nesf/nerfstatic/nerf/utils_test.py" \
           --ignore="jax3d/projects/nesf/nerfstatic/utils/train_utils_test.py"
+    - name: Report results
+      uses: AryazE/auto-dylin/report@main
