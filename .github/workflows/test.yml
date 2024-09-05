@@ -60,7 +60,7 @@ jobs:
       # -n auto: Parallelize tests in processes
       # --durations=X: Log the X longest tests
       run: |
-        pytest -n auto \
+        pytest -n 4 --timeout 300 \
           --ignore="jax3d/projects/nesf/nerfstatic/integration_test/import_test.py" \
           --ignore="jax3d/projects/nesf/nerfstatic/nerf/utils_test.py" \
           --ignore="jax3d/projects/nesf/nerfstatic/utils/train_utils_test.py"
